@@ -15,6 +15,7 @@ const User = sequelize.define('User', {
     address: { type: DataTypes.TEXT },
     dob: { type: DataTypes.DATE },
     start_date: { type: DataTypes.DATE, allowNull: false },
+    is_using: {type: DataTypes.BOOLEAN, defaultValue: true },
     role: { type: DataTypes.ENUM(ROLE.QTV, ROLE.HR, ROLE.NV, ROLE.KT), allowNull: false },
 });
 

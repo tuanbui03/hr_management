@@ -21,7 +21,11 @@ const loginUser = async ({ email, password }) => {
         throw new AppError(401, 'Email hoặc mật khẩu không đúng');
     }
 
-    const token = jwt.sign({ id: user.id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1d' });
+    if (!user.is_using) {
+        throw new AppError(404, 'Tài khoản đã bị khóa!');
+    }
+
+    const token = jwt.sign({ id: user.id, role: user.role, is_using: user.is_using }, process.env.JWT_SECRET, { expiresIn: '1d' });
 
     return {
         status: 200,

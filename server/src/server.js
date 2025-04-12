@@ -13,11 +13,11 @@ config();
     await DB_HR.testConnection();
     
     // Khởi chạy server
-    app.listen(PORT, '0.0.0.0', (error) => {
+    return app.listen(PORT, '0.0.0.0', (error) => {
         if (error) {
             console.log(`${CMD_COLOR.FgRed}[SERVER] Error in server setup${CMD_COLOR.Reset}`);
         } else {
-            console.log(`${CMD_COLOR.FgGreen}[SERVER] listening on http://127.0.0.1:${PORT}/`);
+            console.log(`${CMD_COLOR.FgGreen}[SERVER] listening on http://127.0.0.1:${PORT}/${CMD_COLOR.Reset}`);
         }
     });
 })();

@@ -1,18 +1,19 @@
-const checkRole = (allowedRoles) => {
-    return (req, res, next) => {
-        // Kiểm tra user có tồn tại trong request không (thường được xác thực trước đó)
-        if (!req.user || !req.user.role) {
-            return res.status(401).json({ message: 'Unauthorized: No user role found' });
-        }
+const AppError = require("../utils/appError");
 
-        // Kiểm tra role có nằm trong danh sách được phép không
-        if (!allowedRoles.includes(req.user.role)) {
-            return res.status(403).json({ message: 'Forbidden: You do not have permission' });
-        }
+const checkRole = (...allowedRoles) => {
+  return (req, res, next) => {
+    const user = req.user; // req.user phải được gán từ middleware xác thực trước đó
 
-        // Nếu hợp lệ, tiếp tục xử lý
-        next();
-    };
+    if (!user) {
+      return next(new AppError(401, "Bạn chưa đăng nhập hoặc phiên đăng nhập đã hết hạn."));
+    }
+
+    if (!allowedRoles.includes(user.role)) {
+      return next(new AppError(403, "Bạn không có quyền truy cập chức năng này."));
+    }
+
+    next();
+  };
 };
 
 module.exports = checkRole;

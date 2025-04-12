@@ -6,6 +6,6 @@ const Policy = sequelize.define('Policy', {
     title: { type: DataTypes.STRING, allowNull: false },
     description: { type: DataTypes.TEXT, allowNull: false },
     effective_date: { type: DataTypes.DATE, allowNull: false },
-}, { timestamps: true });
+});
 
 module.exports = Policy;

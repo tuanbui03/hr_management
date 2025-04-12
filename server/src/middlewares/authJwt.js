@@ -1,20 +1,28 @@
 const jwt = require('jsonwebtoken');
-const SECRET_KEY = process.env.JWT_SECRET || 'your-secret-key'; // Lấy từ biến môi trường
+const AppError = require('../utils/appError');
 
-const authJwt = (req, res, next) => {
-    const token = req.headers.authorization?.split(' ')[1]; // Lấy token từ header
+require('dotenv').config();
 
-    if (!token) {
-        return res.status(401).json({ message: 'Unauthorized: No token provided' });
+exports.verifyToken = (req, res, next) => {
+  const authHeader = req.headers['authorization'];
+
+  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    return next(new AppError(401, 'Token không hợp lệ hoặc không được cung cấp, truy cập bị từ chối'));
+  }
+
+  const token = authHeader.split(' ')[1];
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'secret_key');
+    req.user = decoded;
+    next();
+  } catch (err) {
+    if (err.name === 'TokenExpiredError') {
+      return next(new AppError(401, 'Token đã hết hạn'));
+    } else if (err.name === 'JsonWebTokenError') {
+      return next(new AppError(403, 'Token không hợp lệ'));
     }
 
-    try {
-        const decoded = jwt.verify(token, SECRET_KEY);
-        req.user = decoded; // Gán thông tin user vào request
-        next();
-    } catch (error) {
-        return res.status(403).json({ message: 'Forbidden: Invalid token' });
-    }
+    return next(new AppError(403, 'Lỗi xác thực token'));
+  }
 };
-
-module.exports = authJwt;

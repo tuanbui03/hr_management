@@ -24,3 +24,10 @@ exports.HTTP_STATUS = {
         message: 'Internal Server Error'
     }
 }
+
+exports.ROLE = {
+    "QTV": 'admin',
+    "HR": 'hr', 
+    "NV": 'employee', 
+    "KT": 'accounting'
+}

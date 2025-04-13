@@ -12,7 +12,7 @@ router.post('/login', userController.login);
 router.post('/create', verifyToken, checkRole(ROLE.QTV), userController.createUser);
 
 // Lấy profile người dùng đang đăng nhập
-router.get('/profile/:user_id', verifyToken, userController.getProfile);
+router.get('/profile/:user_id', verifyToken, userController.getUserById);
 
 // Cập nhật profile của chính mình
 router.put('/update', verifyToken, userController.updateUser);

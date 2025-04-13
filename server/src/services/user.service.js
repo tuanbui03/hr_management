@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { Op } = require('sequelize');
 
-const { User } = require('../models');
+const { User, Department } = require('../models');
 
 const { checkRequiredFields } = require('../utils/validation');
 const AppError = require('../utils/appError');
@@ -10,7 +10,7 @@ const AppError = require('../utils/appError');
 require('dotenv').config();
 
 const loginUser = async ({ email, password }) => {
-    const user = await User.findOne({ where: { email } });
+    const user = await User.unscoped().scope(null).findOne({ where: { email } });
 
     if (!user) {
         throw new AppError(401, 'Email hoặc mật khẩu không đúng');
@@ -44,10 +44,10 @@ const loginUser = async ({ email, password }) => {
 
 const createUser = async (userData) => {
     checkRequiredFields(userData, ['email', 'password', 'full_name', 'first_name', 'last_name', 'start_date', 'role'])
-    const existing = await User.findOne({ 
-        where: { 
-            [Op.or]: [{ email: userData.email }] 
-        } 
+    const existing = await User.findOne({
+        where: {
+            email: userData.email
+        }
     });
     if (existing) {
         throw new AppError(400, 'Hãy thử lại với email khác');
@@ -65,10 +65,17 @@ const createUser = async (userData) => {
     };
 };
 
-const getProfile = async (userId) => {
+const findUserById = async (userId) => {
     const user = await User.findByPk(userId, {
-        attributes: ['id', 'full_name', 'first_name', 'last_name', 'email', 'phone_number', 'address', 'dob', 'role']
-    });
+        include: [
+          {
+            model: Department,
+            as: 'Department', // Phải khớp chính xác với alias trong association
+            attributes: ['id', 'name']
+          }
+        ]
+      });
+      
 
     if (!user) {
         throw new AppError(404, 'Người dùng không tồn tại');
@@ -126,7 +133,7 @@ const updateUser = async (userId, updatedData) => {
 module.exports = {
     loginUser,
     createUser,
-    getProfile,
+    findUserById,
     updateUser
 };
 

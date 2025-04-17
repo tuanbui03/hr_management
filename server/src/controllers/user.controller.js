@@ -46,7 +46,11 @@ const getUserById = async (req, res, next) => {
 
 const updateUser = async (req, res, next) => {
   try {
-    const userId = req.user.id;
+    const currentUser = req.user;
+    const { user_id } = req.params;
+    
+    const userId = currentUser.id;
+    
     const result = await userService.updateUser(userId, req.body);
     res.json(result);
   } catch (error) {
@@ -54,9 +58,13 @@ const updateUser = async (req, res, next) => {
   }
 };
 
-const forgotPassword = async (req, res, next) => [
-
-]
+const forgotPassword = async (req, res, next) => {
+  try {
+    
+  } catch (error) {
+    next(error);
+  }
+}
 
 module.exports = {
   login,

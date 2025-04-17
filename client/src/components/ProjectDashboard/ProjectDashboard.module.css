@@ -1,0 +1,231 @@
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.dashboardContainer {
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.logo {
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.desktopSearch {
+  display: block;
+}
+
+.searchInput {
+  padding: 8px 16px;
+  border-radius: 24px;
+  border: 1px solid #e0e0e0;
+  width: 300px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #2196f3;
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.mobileSearchButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+.mobileSearchButton:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.userAvatar {
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.mobileSearchOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 16px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 101;
+}
+
+.mobileSearchWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mobileSearchInput {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+}
+
+.cancelButton {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.mainContent {
+  padding: 24px;
+  background-color: #f8fafc;
+}
+
+.statsContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.projectStatsCard {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  flex: 1;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.trendIndicator {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.statLabel {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.statValue {
+  margin: 8px 0 0 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.statValueCompleted {
+  margin: 8px 0 0 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #10b981;
+}
+
+@media (max-width: 991px) {
+  .statsContainer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 12px 16px;
+  }
+
+  .logo {
+    height: 32px;
+  }
+
+  .desktopSearch {
+    display: none;
+  }
+
+  .mobileSearchButton {
+    display: block;
+  }
+
+  .username {
+    display: none;
+  }
+
+  .mainContent {
+    padding: 16px;
+  }
+}

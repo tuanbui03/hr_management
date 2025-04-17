@@ -1,0 +1,340 @@
+.appContainer {
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.companyLogo {
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+  width: 100px;
+  overflow: hidden;
+}
+
+.desktopSearch {
+  display: block;
+}
+
+.searchInput,
+.mobileSearchInput {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #e0e0e0;
+  width: 300px;
+  font-size: 14px;
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mobileSearchButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.userAvatar {
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.mobileSearch {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mainContent {
+  padding: 24px 0;
+}
+
+.formContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.formTitle {
+  margin-bottom: 24px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+}
+
+.formActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.cancelButton,
+.submitButton {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.cancelButton {
+  border: 1px solid #e0e0e0;
+  background: white;
+}
+
+.submitButton {
+  border: none;
+  color: white;
+  background-color: #2196f3;
+}
+
+.actionBar {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.createButton {
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2196f3;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.employeeTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.employeeTable th {
+  text-align: left;
+  background-color: #f5f5f5;
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.employeeTable td {
+  padding: 16px;
+  font-size: 14px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.employeeTable tr:last-child td {
+  border-bottom: none;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 12px;
+}
+
+.viewButton,
+.editButton,
+.deleteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.viewButton {
+  color: #2196f3;
+}
+
+.editButton {
+  color: #4caf50;
+}
+
+.deleteButton {
+  color: #f44336;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalContent {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modalTitle {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.modalText {
+  margin: 0 0 24px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.modalActions button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.modalActions .cancelButton {
+  border: 1px solid #e0e0e0;
+  background: white;
+}
+
+.modalActions .deleteButton {
+  border: none;
+  color: white;
+  background-color: #f44336;
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 12px 16px;
+  }
+
+  .companyLogo {
+    width: 80px;
+  }
+
+  .desktopSearch {
+    display: none;
+  }
+
+  .mobileSearchButton {
+    display: block;
+  }
+
+  .username {
+    display: none;
+  }
+
+  .userAvatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .mobileSearch {
+    display: block;
+  }
+
+  .mainContent {
+    padding: 16px 0;
+  }
+
+  .formContainer {
+    padding: 16px;
+  }
+
+  .actionBar {
+    margin-bottom: 16px;
+  }
+
+  .createButton {
+    padding: 8px 16px;
+  }
+
+  .employeeTable {
+    min-width: 600px;
+  }
+}

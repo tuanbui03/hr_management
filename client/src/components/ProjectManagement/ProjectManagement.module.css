@@ -1,0 +1,397 @@
+.projectManagement {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.searchToggle {
+  background: none;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.searchIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userName {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.searchContainer {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 24px;
+  background-color: #f5f7fa;
+}
+
+.pageHeader {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pageTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.newProjectButton {
+  padding: 12px 24px;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.newProjectButton:hover {
+  background-color: #0056b3;
+}
+
+.createProjectContainer {
+  background-color: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.createProjectHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.backButton {
+  padding: 8px 16px;
+  background-color: #f5f7fa;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #666;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.createProjectTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.createProjectForm {
+  display: grid;
+  gap: 20px;
+  max-width: 600px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formLabel {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.formInput {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.employeeList {
+  display: grid;
+  gap: 12px;
+}
+
+.employeeCheckbox {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.employeeName {
+  font-weight: 500;
+}
+
+.employeeRole {
+  font-size: 14px;
+  color: #666;
+}
+
+.formActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.cancelButton {
+  padding: 12px 24px;
+  background-color: #f5f7fa;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.createButton {
+  padding: 12px 24px;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.projectListContainer {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.projectTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.projectTable th {
+  text-align: left;
+  padding: 16px;
+  color: #666;
+  font-weight: 500;
+  background-color: #f8f9fa;
+}
+
+.projectRow {
+  border-bottom: 1px solid #eee;
+}
+
+.projectRow:last-child {
+  border-bottom: none;
+}
+
+.projectRow td {
+  padding: 16px;
+}
+
+.statusBadge {
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+}
+
+.deleteButton {
+  padding: 8px 16px;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.deleteButton:hover {
+  background-color: #cc0000;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: white;
+  border-radius: 12px;
+  padding: 24px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modalTitle {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.modalText {
+  margin: 0 0 24px 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 12px 16px;
+  }
+
+  .logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .headerActions {
+    gap: 16px;
+  }
+
+  .searchToggle {
+    padding: 8px;
+  }
+
+  .userAvatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .userName {
+    display: none;
+  }
+
+  .mainContent {
+    padding: 16px;
+  }
+
+  .pageTitle {
+    font-size: 20px;
+  }
+
+  .newProjectButton {
+    padding: 8px 16px;
+  }
+
+  .projectTable {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+.searchToggle:hover,
+.backButton:hover,
+.cancelButton:hover {
+  background-color: #e8eaed;
+}
+
+.createButton:hover,
+.newProjectButton:hover {
+  background-color: #0056b3;
+}
+
+.searchInput:focus,
+.formInput:focus {
+  outline: none;
+  border-color: #007aff;
+}
+
+.employeeCheckbox:hover {
+  background-color: #f5f7fa;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

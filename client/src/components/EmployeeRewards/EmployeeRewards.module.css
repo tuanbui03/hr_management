@@ -1,0 +1,367 @@
+.employeeRewardsContainer {
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.companyLogo {
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+  width: 100px;
+  overflow: hidden;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+}
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 300px;
+  background-color: #f5f5f5;
+}
+
+.searchInput {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14px;
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.searchIcon {
+  margin-left: 8px;
+  color: #666;
+}
+
+.userActions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.mobileSearchButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.userAvatar {
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.mobileSearchContainer {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mobileSearchInput {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.mobileSearchInput:focus {
+  outline: none;
+  border-color: #007aff;
+}
+
+.mainContent {
+  padding: 24px;
+}
+
+.actionBar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.newRewardButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+  background-color: #0066cc;
+  border: none;
+  cursor: pointer;
+}
+
+.newRewardButton:hover {
+  background: #0052a3;
+}
+
+.employeeTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.tableHeader {
+  border-bottom: 2px solid #dee2e6;
+  background-color: #f8f9fa;
+}
+
+.tableHeaderCell {
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #495057;
+}
+
+.tableHeaderCellActions {
+  padding: 16px;
+  text-align: center;
+  font-weight: 600;
+  color: #495057;
+}
+
+.tableRow {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.tableRow:hover {
+  background: #f8f9fa;
+}
+
+.tableCell {
+  padding: 16px;
+  color: #212529;
+}
+
+.tableCellHiddenMobile {
+  padding: 16px;
+  color: #212529;
+}
+
+.tableCellActions {
+  padding: 16px;
+  text-align: center;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.actionButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #0066cc;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.actionButton:hover {
+  background: #f0f7ff;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalContent {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modalTitle {
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.rewardForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+}
+
+.formLabel {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.formInput,
+.formTextarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  outline: none;
+  border-color: #0066cc;
+}
+
+.formTextarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.formActions {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  justify-content: flex-end;
+}
+
+.cancelButton,
+.submitButton,
+.deleteButton {
+  padding: 10px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.cancelButton {
+  border: 1px solid #ddd;
+  background: white;
+  color: #333;
+}
+
+.cancelButton:hover {
+  background: #f5f5f5;
+}
+
+.submitButton {
+  border: none;
+  background-color: #0066cc;
+  color: white;
+}
+
+.submitButton:hover {
+  background: #0052a3;
+}
+
+.deleteButton {
+  border: none;
+  background-color: #dc3545;
+  color: white;
+}
+
+.deleteButton:hover {
+  background: #c82333;
+}
+
+.modalText {
+  margin-bottom: 24px;
+  color: #666;
+}
+
+.modalActions {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 12px 16px;
+  }
+
+  .searchContainer {
+    display: none;
+  }
+
+  .mobileSearchButton {
+    display: block;
+  }
+
+  .username {
+    display: none;
+  }
+
+  .mainContent {
+    padding: 16px;
+  }
+
+  .modalContent {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .tableCellHiddenMobile {
+    display: none;
+  }
+}

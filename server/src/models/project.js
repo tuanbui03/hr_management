@@ -8,7 +8,7 @@ const Project = sequelize.define('Project', {
     description: { type: DataTypes.TEXT },
     start_date: { type: DataTypes.DATE },
     end_date: { type: DataTypes.DATE },
-}, { timestamps: true });
+});
 
 Project.belongsTo(Department, { foreignKey: 'department_id' });
 

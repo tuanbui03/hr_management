@@ -8,7 +8,7 @@ const Contract = sequelize.define('Contract', {
     end_date: { type: DataTypes.DATE },
     contract_type: { type: DataTypes.ENUM('full-time', 'part-time', 'internship', 'temporary'), allowNull: false },
     salary: { type: DataTypes.DECIMAL(10,2), allowNull: false },
-}, { timestamps: true });
+});
 
 Contract.belongsTo(User, { foreignKey: 'user_id' });
 

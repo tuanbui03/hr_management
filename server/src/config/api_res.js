@@ -1,6 +1,10 @@
-exports.getRespone = (httpStatus, data) => {
-    return {
-        error: httpStatus,
-        data: data
+exports.getRespone = (httpStatus, token = null, data = null) => {
+  return {
+    status: httpStatus.status,
+    message: httpStatus.message,
+    metadata: {
+      token,
+      data
     }
-}
+  };
+};

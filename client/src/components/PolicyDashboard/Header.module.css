@@ -1,0 +1,117 @@
+.header {
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.desktopSearch {
+  display: block;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 300px;
+  background-color: #f5f5f5;
+}
+
+.searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+.searchIcon {
+  margin-left: 8px;
+  color: #666;
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.mobileSearchButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.userAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.mobileSearch {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 12px 16px;
+  }
+
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .desktopSearch {
+    display: none;
+  }
+
+  .mobileSearchButton {
+    display: block;
+  }
+
+  .username {
+    display: none;
+  }
+
+  .mobileSearch {
+    display: block;
+  }
+}

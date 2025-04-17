@@ -6,6 +6,12 @@ const bodyParser = require('body-parser');
 // Call Controller
 const errorController = require('./controllers/error');
 
+// Call Middlewares
+const errorHandler = require('./middlewares/errorHandler');
+
+// Call Routes
+const userRoutes = require('./routes/user.route');
+
 const app = express();
 
 // Middleware
@@ -19,6 +25,12 @@ app.use((req, res, next) => {
 });
 
 // Use routes
+app.use('/api/users', userRoutes);
+
+// Global error handler
+app.use(errorHandler);
+
+// Handle 404 - Not Found
 app.use(errorController.get404);
 
 module.exports = app;

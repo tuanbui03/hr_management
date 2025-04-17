@@ -1,0 +1,213 @@
+.contractManagement {
+  padding: 20px;
+  font-family: system-ui, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  margin: 0;
+}
+
+.createButton {
+  padding: 10px 20px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.createButton:hover {
+  background-color: #0052a3;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+}
+
+.contractTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.contractTable th,
+.contractTable td {
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.contractTable thead tr {
+  background-color: #f5f5f5;
+}
+
+.contractRow {
+  border-top: 1px solid #eee;
+}
+
+.contractRow:hover {
+  background-color: #f9f9f9;
+}
+
+.deleteButton {
+  padding: 6px 12px;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  background-color: #cc0000;
+}
+
+.formContainer {
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.formTitle {
+  margin-bottom: 24px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+}
+
+.formActions {
+  display: flex;
+  gap: 12px;
+}
+
+.submitButton {
+  padding: 10px 20px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.submitButton:hover {
+  background-color: #0052a3;
+}
+
+.cancelLink {
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: none;
+  color: inherit;
+}
+
+.cancelLink:hover {
+  background-color: #e5e5e5;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modalTitle {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+}
+
+.modalMessage {
+  margin: 0 0 24px 0;
+  color: #666;
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.cancelButton {
+  padding: 8px 16px;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancelButton:hover {
+  background-color: #e5e5e5;
+}
+
+.confirmDeleteButton {
+  padding: 8px 16px;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirmDeleteButton:hover {
+  background-color: #cc0000;
+}
+
+@media (max-width: 640px) {
+  .contractTable {
+    font-size: 14px;
+  }
+}

@@ -8,7 +8,7 @@ const OnLeave = sequelize.define('OnLeave', {
     end_date: { type: DataTypes.DATE, allowNull: false },
     reason: { type: DataTypes.TEXT },
     status: { type: DataTypes.ENUM('pending', 'approved', 'rejected'), defaultValue: 'pending' },
-}, { timestamps: true });
+});
 
 OnLeave.belongsTo(User, { foreignKey: 'user_id' });
 

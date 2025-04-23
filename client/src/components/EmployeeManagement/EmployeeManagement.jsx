@@ -8,7 +8,6 @@ import EmployeeDetails from "./EmployeeDetails";
 import DeleteConfirmation from "./DeleteConfirmation";
 
 const EmployeeManagement = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [currentView, setCurrentView] = useState("list");
   const [selectedEmployee, setSelectedEmployee] = useState(null);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
@@ -50,10 +49,6 @@ const EmployeeManagement = () => {
       phoneNumber: "+1 (555) 456-7890",
     },
   ]);
-
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
 
   const handleView = (id) => {
     const employee = employees.find((emp) => emp.id === id);
@@ -108,13 +103,7 @@ const EmployeeManagement = () => {
 
   return (
     <div className={styles.employeeManagement}>
-      <Header
-        onToggleSidebar={toggleSidebar}
-        searchQuery={searchQuery}
-        updateSearch={updateSearch}
-      />
       <div className={styles.mainContent}>
-        <Sidebar isOpen={sidebarOpen} onToggle={toggleSidebar} />
         <main className={styles.contentArea}>
           {currentView === "list" && (
             <EmployeeList

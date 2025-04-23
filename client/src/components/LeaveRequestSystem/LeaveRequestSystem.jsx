@@ -75,7 +75,6 @@ const LeaveRequestSystem = () => {
 
   return (
     <div className={styles.leaveRequestSystem}>
-      <Header />
       <main className={styles.mainContent}>
         <div className={styles.pageHeader}>
           <h1 className={styles.pageTitle}>Leave Requests</h1>

@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // Import các component bạn đã generate
+import Layout from "./components/Layout/layout.jsx";
 import LoginPage from "./components/LoginForm/LoginForm.jsx";
 import ContractManagement from "./components/ContractManagement/ContractList.jsx";
 import DepartmentList from "./components/DepartmentList/DepartmentList.jsx";
@@ -17,23 +18,23 @@ import ProjectOverview from "./components/ProjectOverview/ProjectOverview.jsx";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/contracts" element={<ContractManagement />} />
-        <Route path="/departments" element={<DepartmentList />} />
-        <Route path="/employee" element={<EmployeeManagement />} />
-        <Route path="/employee/rewards" element={<EmployeeRewards />} />
-        <Route path="/employee/salary" element={<EmployeeSalaryManagement />} />
-        <Route path="/leave/request" element={<LeaveRequestSystem />} />
-        <Route path="/policy" element={<PolicyDashboard />} />
-        <Route path="/project/dashboard" element={<ProjectDashboard />} />
-        <Route path="/projects" element={<ProjectManagement />} />
-        <Route path="/project/overview" element={<ProjectOverview />} />
-        {/* Tạo thêm routes nếu cần */}
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Navigate to="/login" />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/management" element={<Layout />}>
+        <Route path="contracts" element={<ContractManagement />} />
+        <Route path="departments" element={<DepartmentList />} />
+        <Route path="employee/list" element={<EmployeeManagement />} />
+        <Route path="employee/rewards" element={<EmployeeRewards />} />
+        <Route path="employee/salary" element={<EmployeeSalaryManagement />} />
+        <Route path="leave/request" element={<LeaveRequestSystem />} />
+        <Route path="policy" element={<PolicyDashboard />} />
+        <Route path="project/dashboard" element={<ProjectDashboard />} />
+        <Route path="projects" element={<ProjectManagement />} />
+        <Route path="project/overview" element={<ProjectOverview />} />
+      </Route>
+      {/* Tạo thêm routes nếu cần */}
+    </Routes>
   );
 }
 

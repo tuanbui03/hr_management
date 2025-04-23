@@ -1,0 +1,272 @@
+.admin-header {
+  --white-color: #ffffff;
+  --active-color-text: #007bff;
+  background-color: var(--white-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  margin: 0 auto;
+}
+
+.menu-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.menu-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo-svg {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5rem;
+}
+
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-style: italic;
+  color: #333;
+}
+
+.navigation {
+  display: none;
+}
+
+.navigation ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  padding: 1.15rem 25px;
+}
+
+.navigation a:hover,
+.navigation a:focus,
+.logo-text:hover {
+  color: var(--active-color-text);
+}
+
+.user-profile {
+  position: relative;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.avatar:hover,
+.avatar:focus {
+  transform: scale(1.1);
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--white-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 0.5rem 0;
+  min-width: 150px;
+}
+
+.dropdown a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown a:hover,
+.dropdown a:focus {
+  background-color: #f8f9fa;
+}
+
+
+.sidebar-nav .active a,
+.admin-header .active a {
+  color: var(--active-color-text);
+  border-bottom: 3px solid #1e88e5;
+}
+
+/* sidebar */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: 2px 68px 4px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease;
+  z-index: 1001;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 53px;
+  padding: 0.85rem 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li {
+  margin: 0;
+}
+
+.sidebar-nav a {
+  display: block;
+  padding: 1rem;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a:focus {
+  color: var(--active-color-text);
+  background-color: #f8f9fa;
+}
+
+.close-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: .5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-button svg {
+  width: 24px;
+  height: 24px;
+  fill: #333;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-menu {
+  padding: 20px;
+  background: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.navlink, .dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 10px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.navlink:hover, .dropdown-header:hover {
+  background: #f0f0f0;
+}
+
+.navlink.active {
+  background: #007bff;
+  color: white;
+}
+
+.nav-icon {
+  margin-right: 8px;
+}
+
+.dropdown-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding-left: 16px;
+}
+
+.dropdown-menu.open {
+  max-height: 500px; /* đủ to để mở */
+}
+
+.dropdown-list {
+  margin-bottom: 10px;
+}
+
+.dropdown-header__lablel {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+/* END sidebar */
+
+@media (max-width: 640px) {
+
+  .admin-header .logo-text {
+    display: none;
+  }
+}
+
+@media (max-width: 300px) {
+
+  .sidebar {
+    max-width: 100%;
+  }
+
+  .sidebar .logo-text {
+    display: none;
+  }
+}

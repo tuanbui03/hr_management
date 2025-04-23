@@ -104,13 +104,6 @@ const EmployeeRewards = () => {
 
   return (
     <div className={styles.employeeRewardsContainer}>
-      <Header
-        username={username}
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
-        isSearchOpen={isSearchOpen}
-        toggleSearch={toggleSearch}
-      />
       <main className={styles.mainContent}>
         <div className={styles.actionBar}>
           <button className={styles.newRewardButton} onClick={handleNewReward}>

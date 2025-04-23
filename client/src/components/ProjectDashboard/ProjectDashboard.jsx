@@ -3,6 +3,8 @@ import Header from "./Header";
 import ProjectStats from "./ProjectStats";
 import styles from "./ProjectDashboard.module.css";
 
+import { useFetchApi } from "../../hooks/useFetchApi";
+
 const ProjectDashboard = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -26,6 +28,10 @@ const ProjectDashboard = () => {
       trend: "+28%",
     },
   };
+  
+  const { data: profileData, loading } = useFetchApi("/api/project/summary/monthly");
+
+  if (loading) return <div>Loading...</div>;
 
   return (
     <div className={styles.dashboardContainer}>

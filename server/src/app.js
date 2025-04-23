@@ -1,5 +1,6 @@
 // Call library
 const path = require('path');
+const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -11,6 +12,7 @@ const errorHandler = require('./middlewares/errorHandler');
 
 // Call Routes
 const userRoutes = require('./routes/user.route');
+const prjRoutes = require('./routes/project.routes');
 
 const app = express();
 
@@ -24,8 +26,15 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(cors({
+  origin: 'http://localhost:3000', // hoặc '*'
+  credentials: true, // Nếu cần gửi cookie / token auth
+}));
+
+
 // Use routes
 app.use('/api/users', userRoutes);
+app.use('/api/project', prjRoutes);
 
 // Global error handler
 app.use(errorHandler);

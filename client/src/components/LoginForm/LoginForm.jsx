@@ -1,38 +1,58 @@
 import React, { useState } from "react";
 import styles from "./LoginForm.module.css";
+import { useNavigate } from "react-router-dom";
+import { loginApi } from "../../services/authService";
+import { useAuth } from "../../contexts/AuthContext";
+import Loading from "../LoadingIndicator/Loading";
 
 function LoginForm() {
-  const [username, setUsername] = useState("");
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { setUserInfo } = useAuth();
+  const [loading, setLoading] = useState(false);
 
-  const handleLogin = (event) => {
-    event.preventDefault();
-    // Handle login logic here
+  const handleSubmit = async (e) => {
+    setLoading(true);
+    e.preventDefault();
+    const res = await loginApi(email, password);
+
+    if (res.status === 200) {
+      console.log(res.data);
+      
+      setUserInfo(res.data);
+      navigate("/project/dashboard");
+    } else {
+      alert(res.message || "Đăng nhập thất bại");
+    }
+    setLoading(false);
   };
+  
+  if (loading) return <Loading />;
 
   return (
     <main className={styles.loginContainer}>
       <div className={styles.loginCard}>
         <div className={styles.imageWrapper}>
           <img
-            src="https://placehold.co/800x800"
-            alt="Login background"
+            src="/images/login.jpg"
+            alt="https://placehold.co/800x800"
             className={styles.loginImage}
           />
         </div>
         <div className={styles.formWrapper}>
           <h1 className={styles.formTitle}>Welcome Back</h1>
-          <form onSubmit={handleLogin}>
+          <form onSubmit={handleSubmit}>
             <div className={styles.inputGroup}>
-              <label htmlFor="username" className={styles.inputLabel}>
-                Username
+              <label htmlFor="email" className={styles.inputLabel}>
+                Email
               </label>
               <input
                 className={styles.inputField}
-                id="username"
+                id="email"
                 type="text"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 aria-required="true"
               />
             </div>
